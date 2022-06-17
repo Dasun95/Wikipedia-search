@@ -1,0 +1,5 @@
+<!-- (submit)="onFormSubmit($event)" the part $event is used to prevent default submission by browser when press the enter-->
+
+<form (submit)="onFormSubmit($event)">
+    <input (input)="term = ($any($event.target).value)" />
+</form>
