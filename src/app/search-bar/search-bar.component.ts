@@ -7,16 +7,18 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class SearchBarComponent implements OnInit {
 
-  @Output() submitToParent = new EventEmitter<string>();  //to sent info to child to parent
+  @Output() submitted = new EventEmitter<string>();  //to sent info to child to parent
   term = '';
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  onFormSubmit(event:any) {
+  onFormSubmit(event: any) {
+    // console.log('SearchBarComp')
+    // console.log(event);
     event.preventDefault();              //prevent default submission by browser when press the enter. we have own submitting method
-    this.submitToParent.emit(this.term);     //to sent info to child to parent
+    this.submitted.emit(this.term);     //to sent info to child to parent
   }
 
 }
