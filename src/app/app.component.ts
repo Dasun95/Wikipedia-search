@@ -11,9 +11,8 @@ export class AppComponent {
   constructor(private wikipedia: WikipediaService){}
 
   public onTerm(term: any) {
-    // console.log('termAppComp')
     this.wikipedia.search(term).subscribe(response => {
-      // console.log(response);
+      console.log(response);
     });
   }
 }
