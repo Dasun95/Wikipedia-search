@@ -15,8 +15,6 @@ export class SearchBarComponent implements OnInit {
   }
 
   onFormSubmit(event: any) {
-    // console.log('SearchBarComp')
-    // console.log(event);
     event.preventDefault();              //prevent default submission by browser when press the enter. we have own submitting method
     this.submitted.emit(this.term);     //to sent info to child to parent
   }
